@@ -372,16 +372,11 @@ KBUILD_HOSTLDLIBS   := $(HOST_LFS_LIBS) $(HOSTLDLIBS)
 # Make variables (CC, etc...)
 AS		= $(CROSS_COMPILE)as
 LD		= $(CROSS_COMPILE)ld
-<<<<<<< HEAD
+
 CC              = $(srctree)/toolchain/clang/host/linux-x86/clang-r353983c/bin/clang
-=======
-#CC		= $(CROSS_COMPILE)gcc
-#CC    = $(srctree)/toolchain/clang/host/linux-x86/clang-r353983c/bin/clang
-# CC    = ../PLATFORM/prebuilts/clang/host/linux-x86/clang-r353983c/bin/clang
 
-CC=/home/physwizz/toolchains/toolchains-for-exynos-850/android_prebuilts_clang_host_linux-x86_clang-5484270-9.0/bin/clang
 
->>>>>>> f5f1244f5... extra I/O scheduler
+
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
 NM		= $(CROSS_COMPILE)nm
@@ -501,16 +496,11 @@ endif
 
 ifeq ($(cc-name),clang)
 ifneq ($(CROSS_COMPILE),)
-<<<<<<< HEAD
+
 CLANG_TRIPLE    ?= $(srctree)/toolchain/clang/host/linux-x86/clang-r353983c/bin/aarch64-linux-gnu-
-=======
-#CLANG_TRIPLE	?= $(CROSS_COMPILE)
-#CLANG_TRIPLE	?= $(srctree)/toolchain/clang/host/linux-x86/clang-r353983c/bin/aarch64-linux-gnu-
-# CLANG_TRIPLE	?= ../PLATFORM/prebuilts/clang/host/linux-x86/clang-r353983c/bin/aarch64-linux-gnu-
 
-CLANG_TRIPLE=aarch64-linux-gnu-
 
->>>>>>> f5f1244f5... extra I/O scheduler
+
 CLANG_FLAGS	+= --target=$(notdir $(CLANG_TRIPLE:%-=%))
 ifeq ($(shell $(srctree)/scripts/clang-android.sh $(CC) $(CLANG_FLAGS)), y)
 $(error "Clang with Android --target detected. Did you specify CLANG_TRIPLE?")
